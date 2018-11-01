@@ -1,0 +1,20 @@
+{
+  "name": "FECProxy",
+  "version": "1.0.0",
+  "description": "Proxy for all components",
+  "main": "index.js",
+  "scripts": {
+    "server-dev": "nodemon ./server.js"
+  },
+  "keywords": [],
+  "author": "Kenni",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "circular-json": "^0.5.9",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "morgan": "^1.9.0"
+  }
+}

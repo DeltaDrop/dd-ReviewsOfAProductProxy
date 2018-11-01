@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>DeltaDrop</title>
+  </head>
+  <body>
+    <div id="Gallery"></div>
+    <div id="ProductInfo"></div>
+    <div id="Overview"></div>
+    <div id="Reviews"></div>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="http://localhost:3000/bundle.js"></script>
+    <script src="http://localhost:3001/bundle.js"></script>
+    <script src="http://localhost:3002/bundle.js"></script>
+    <script src="http://localhost:3003/bundle.js"></script>
+    <!-- see: https://reactjs.org/docs/react-without-jsx.html -->
+    <script>
+      ReactDOM.render(
+        React.createElement(Gallery),
+        document.getElementById('Gallery')
+      );
+      ReactDOM.render(
+        React.createElement(ProductInfo),
+        document.getElementById('ProductInfo')
+      );
+      ReactDOM.render(
+        React.createElement(Overview),
+        document.getElementById('Overview')
+      );
+      ReactDOM.render(
+        React.createElement(Reviews),
+        document.getElementById('Reviews')
+      );
+    </script>
+  </body>
+</html>
