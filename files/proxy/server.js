@@ -16,37 +16,49 @@ app.use(cors());
 app.get('/buy/:productName', (err, res) => {
   res.sendFile(path.resolve('public/index.html'))
 })
-// app.get('/item/:id', (req, res)=> {
-//   axios.get(`http://localhost:3001${req.url}`)
-//   .then(data => {
-//     res.status(200).send(circularJson.stringify(data))
-//   })
-//   .catch(err => {console.log(err, ' err in get productinfo item in proxy')})
-// })
+app.get('/api/:prod_name', (req, res)=> {
+  axios.get(`http://18.224.199.183${req.url}`)
+  .then(data => {
+    res.status(200).send(circularJson.stringify(data))
+  })
+  .catch(err => {console.log(err, ' err in get productinfo item in proxy')})
+})
 
-// app.get('/categories/:id', (req, res)=> {
-//   axios.get(`http://localhost:3001${req.url}`)
-//   .then(data => {
-//     res.status(200).send(circularJson.stringify(data))
-//   })
-//   .catch(err => {console.log(err, ' err in get productinfo category in proxy')})
-// })
+app.get('/api/categories/:prod_name', (req, res)=> {
+  axios.get(`http://18.224.199.183${req.url}`)
+  .then(data => {
+    res.status(200).send(circularJson.stringify(data))
+  })
+  .catch(err => {console.log(err, ' err in get productinfo category in proxy')})
+})
 
-// app.get('/buy/:productname/reviews', (req, res)=> {
-//   axios.get(`http://localhost:3002${req.url}`)
-//   .then(data => {
-//     res.status(200).send(circularJson.stringify(data))
-//   })
-//   .catch(err => {console.log(err, ' err in get reviews in proxy')})
-// })
+app.post('/api/drop', (req, res) => {
+  axios.get(`http://18.224.199.183${req.url}`)
+  .then(data => {
+    res.status(200).send(circularJson.stringify(data))
+  })
+  .catch(err => {console.log(err, ' err in get productinfo drop in proxy')})
+})
 
-// app.get('/buy/:prod_name/overview', (req, res)=> {
-//   axios.get(`http://localhost:3003${req.url}`)
-//   .then(data => {
-//     res.status(200).send(circularJson.stringify(data))
-//   })
-//   .catch(err => {console.log(err, ' err in get overview in proxy')})
-// })
+app.get('/api/:productName/reviews', (req, res)=> {
+  axios.get(`http://ec2-54-89-153-231.compute-1.amazonaws.com${req.url}`)
+  .then(data => {
+    res.status(200).send(circularJson.stringify(data))
+  })
+  .catch(err => {console.log(err, ' err in get reviews in proxy')})
+})
+
+app.post('/api/:productName/reviews/search', (req, res) => {
+
+})
+
+app.get('/api/:prod_name/overview', (req, res)=> {
+  axios.get(`http://localhost:3003${req.url}`)
+  .then(data => {
+    res.status(200).send(circularJson.stringify(data))
+  })
+  .catch(err => {console.log(err, ' err in get overview in proxy')})
+})
 
 app.listen(port, () => {
   console.log(`server running at: http://localhost:${port}`);
